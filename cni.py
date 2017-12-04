@@ -1,37 +1,35 @@
 from PIL import Image
 
-icon_name = []
-icon_name.append( "IconNotificationDefault-hdpi.png" )
-icon_name.append( "IconNotificationDefault-hdpi-v4.png" )
-icon_name.append( "IconNotificationDefault-hdpi-v9.png" )
-icon_name.append( "IconNotificationDefault-hdpi-v11.png" )
-icon_name.append( "IconNotificationDefault-ldpi.png" ) 
-icon_name.append( "IconNotificationDefault-ldpi-v9.png" )
-icon_name.append( "IconNotificationDefault-ldpi-v11.png" )
-icon_name.append( "IconNotificationDefault-mdpi.png" )
-icon_name.append( "IconNotificationDefault-mdpi-v9.png" )
-icon_name.append( "IconNotificationDefault-mdpi-v11.png" )
-icon_name.append( "IconNotificationDefault-xhdpi.png" )
-icon_name.append( "IconNotificationDefault-xhdpi-v9.png" )
-icon_name.append( "IconNotificationDefault-xhdpi-v11.png" )
+icons = {
+	"IconNotificationDefault-ldpi.png": 16,
+	"IconNotificationDefault-ldpi-v9.png": 16,
+	"IconNotificationDefault-ldpi-v11.png": 16,
 
-icon_size = []
-icon_size.append( 52 )
-icon_size.append( 72 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
-icon_size.append( 52 )
+	"IconNotificationDefault-mdpi.png": 24,
+	"IconNotificationDefault-mdpi-v9.png": 24,
+	"IconNotificationDefault-mdpi-v11.png": 24,
 
-for i in range(13):
+	"IconNotificationDefault-hdpi.png": 36,
+	"IconNotificationDefault-hdpi-v9.png": 36,
+	"IconNotificationDefault-hdpi-v11.png": 36,
+
+	"IconNotificationDefault-xhdpi.png": 48,
+	"IconNotificationDefault-xhdpi-v9.png": 48,
+	"IconNotificationDefault-xhdpi-v11.png": 48,
+
+	"IconNotificationDefault-xxhdpi.png": 72,
+	"IconNotificationDefault-xxhdpi.png-v9.png": 72,
+	"IconNotificationDefault-xxhdpi.png-v11.png": 72,
+
+	"IconNotificationDefault-xxxhdpi.png": 96,
+	"IconNotificationDefault-xxxhdpi.png-v9.png": 96,
+	"IconNotificationDefault-xxxhdpi.png-v11.png": 96,
+
+	"ic_onesignal_large_icon_default.png": 256,
+}
+
+for name in icons:
 	im = Image.open( "upload.png" )
-	im.thumbnail((icon_size[i], icon_size[i]), Image.ANTIALIAS)
-	im.save(icon_name[i], "PNG")
+	im.thumbnail((icons[name], icons[name]), Image.ANTIALIAS)
+	im.save(name, "PNG")
 	im.close()
