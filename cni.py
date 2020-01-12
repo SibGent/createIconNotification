@@ -32,6 +32,6 @@ icons = {
 
 for name in icons:
 	im = Image.open( "upload.png" )
-	im.resize((icons[name], icons[name]), Image.ANTIALIAS)
+	im.thumbnail((icons[name], icons[name]), Image.ANTIALIAS)
 	im.save(name, "PNG")
 	im.close()
